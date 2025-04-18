@@ -1,0 +1,23 @@
+baseURL = 'https://zinnia.im/'
+languageCode = 'en'
+title = 'Zinnia'
+theme = "dream"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+hasCJKLanguage = true
+
+[params]
+lightTheme = "light"
+darkTheme = "dark"
+author = "Zinnia"
+description = "" 
+avatar = "Zinnia.jpeg"
+headerTitle = "Zinnia"
+rss = true
+# siteStartYear = 2025
+favicon = "Zinnia.jpeg"
+stickyNav = false
+showTableOfContents = true
+showSummaryCoverInPost = true
+showPrevNextPost = true
+noDefaultSummaryCover = true
