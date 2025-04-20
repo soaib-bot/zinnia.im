@@ -21,3 +21,4 @@ showTableOfContents = true
 showSummaryCoverInPost = true
 showPrevNextPost = true
 noDefaultSummaryCover = true
+collapseNavItems = ["posts", "categories", "tags"]
