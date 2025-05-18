@@ -1,5 +1,5 @@
 ---
-title: "No Place to Come Back To"
+title: "স্বীকারোক্তি"
 date: 2025-05-17
 cover: "image1.jpg"
 nolastmod: true
