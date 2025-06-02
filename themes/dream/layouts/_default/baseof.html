@@ -4,20 +4,25 @@
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ site.Title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ site.Title }}</title>
 
-    {{ partial "head.html" . }}
+  {{ partial "head.html" . }}
 
-    {{ block "css" . }} {{ end }}
+  {{/* Process and link background.css here */}}
+  {{ $bgCss := resources.Get "css/background.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $bgCss.Permalink }}" integrity="{{ $bgCss.Data.Integrity }}">
 
-    {{ range site.Params.Advanced.customCSS }}
-    <link rel="stylesheet" href="{{ . | relURL }}" />
-    {{ end }}
+  {{ block "css" . }} {{ end }}
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
-  </head>
+  {{ range site.Params.Advanced.customCSS }}
+  <link rel="stylesheet" href="{{ . | relURL }}" />
+  {{ end }}
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
+</head>
+
 
   <body x-data="{
     flip: false,
