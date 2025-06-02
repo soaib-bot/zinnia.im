@@ -19,7 +19,20 @@
   {{ range site.Params.Advanced.customCSS }}
   <link rel="stylesheet" href="{{ . | relURL }}" />
   {{ end }}
-
+<style>
+#dream-global-bg {
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+</style>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
 </head>
 
