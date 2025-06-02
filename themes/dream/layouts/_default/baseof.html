@@ -22,6 +22,10 @@
   <body x-data="{
     flip: false,
   }">
+
+  {{ $bgCss := resources.Get "css/background.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $bgCss.Permalink }}" integrity="{{ $bgCss.Data.Integrity }}">
+
     <!-- If backgroundImage defined -->
     <div id="dream-global-bg"></div>
 
