@@ -15,7 +15,7 @@
     {{ range site.Params.Advanced.customCSS }}
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end }}
-{{ $bgCss := resources.Get "css/background.css" | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+{{ $bgCss := resources.Get "css/background.css" | css.PostCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $bgCss.Permalink }}" integrity="{{ $bgCss.Data.Integrity }}">
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
