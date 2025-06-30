@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ site.LanguageCode }}"
+{{ $bgCss := resources.Get "css/background.css" | css.PostCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $bgCss.Permalink }}" integrity="{{ $bgCss.Data.Integrity }}">
+
+<style>
+#dream-global-bg {
+  background-image: url('{{ "/images/background.jpg" | relURL }}');
+}
+</style>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>="{{ site.LanguageCode }}"
   x-data
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
@@ -17,6 +26,12 @@
     {{ end }}
 {{ $bgCss := resources.Get "css/background.css" | css.PostCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $bgCss.Permalink }}" integrity="{{ $bgCss.Data.Integrity }}">
+
+<style>
+#dream-global-bg {
+  background-image: url('{{ "/images/background.jpg" | relURL }}');
+}
+</style>>
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
   </head>
