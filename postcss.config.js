@@ -1,3 +1,9 @@
 module.exports = {
-  plugins: []
+  plugins: [
+    require('postcss-url')({
+      url: 'rebase',
+      assetsPath: 'static',
+      useHash: false
+    })
+  ]
 }
